@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+  Derived from chromium Layout Tests:
+  https://cs.chromium.org/chromium/src/third_party/WebKit/LayoutTests/http/tests/security/frameNavigation/xss-DENIED-top-navigation-without-user-gesture.html
+  -->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>title</title>
+    <script>
+      window.addEventListener("load", e => {
+        window.setTimeout(() => {
+          document.getElementById('iframe3').src = "http://localhost:12345/test/iframe-that-performs-top-navigation-without-user-gesture.html";
+        }, 3000);
+      });
+    </script>
+  </head>
+  <body>
+    <h3>Third-Party redirection test.</h3>
+
+    <p>The browser should block the redirections and prompt to allow bypassing
+    the intervention.</p>
+
+    <iframe height="64px" src="http://localhost:12345/test/iframe-that-performs-top-navigation-without-user-gesture.html"></iframe>
+    <iframe height="64px" src="http://localhost:12345/test/other-iframe-that-performs-top-navigation-without-user-gesture.html"></iframe>
+    <iframe height="64px" id="iframe3"></iframe>
+  </body>
+</html>
