@@ -12,7 +12,7 @@
     <script>
       window.addEventListener("load", e => {
         window.setTimeout(() => {
-          document.getElementById('iframe3').src = "http://localhost:12345/test/iframe-that-performs-top-navigation-without-user-gesture.html";
+          document.getElementById('iframe3').src = "https://ndossougbete.github.io/web-sandbox/interventions/3p-redirect/iframe-that-performs-top-navigation-without-user-gesture.html";
         }, 3000);
       });
     </script>
@@ -21,10 +21,18 @@
     <h3>Third-Party redirection test.</h3>
 
     <p>The browser should block the redirections and prompt to allow bypassing
-    the intervention.</p>
+    the intervention</p>
 
-    <iframe height="64px" src="http://localhost:12345/test/iframe-that-performs-top-navigation-without-user-gesture.html"></iframe>
-    <iframe height="64px" src="http://localhost:12345/test/other-iframe-that-performs-top-navigation-without-user-gesture.html"></iframe>
+    <p>That requires the redirection to be targeting a third party origin. Clone
+    this repository and host it somewhere for the demo to work
+    </p>
+    <p>
+    TODO: Make it with a python/node script or android app that would spawn
+    servers on different ports
+    </p>
+
+    <iframe height="64px" src="https://ndossougbete.github.io/web-sandbox/interventions/3p-redirect/iframe-that-performs-top-navigation-without-user-gesture.html"></iframe>
+    <iframe height="64px" src="https://ndossougbete.github.io/web-sandbox/interventions/3p-redirect/other-iframe-that-performs-top-navigation-without-user-gesture.html"></iframe>
     <iframe height="64px" id="iframe3"></iframe>
   </body>
 </html>
